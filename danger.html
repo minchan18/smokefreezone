@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>흡연의 단점</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-image: url('3.JPG');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      color: white;
+      overflow-y: auto;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-left: 5px solid #ff4d4d;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+      font-size: 1.5em;
+    }
+
+    .card p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .links {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .links a {
+      color: #ff9999;
+      text-decoration: underline;
+      font-size: 1.1em;
+      margin: 0 10px;
+    }
+
+    .links a:hover {
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>흡연, 당신이 잃게 될 것들</h1>
+
+    <div class="card-container">
+      <div class="card">
+        <h2>1. 건강 문제</h2>
+        <p>
+          흡연은 폐암, 후두암, 심근경색, 뇌졸중 등 수많은 질병의 주요 원인입니다. 특히 담배에 포함된 70여 종의 발암물질은 생명을 위협합니다.
+        </p>
+      </div>
+      <div class="card">
+        <h2>2. 경제적 손실</h2>
+        <p>
+          하루 한 갑을 피우면 1년에 약 150만 원 이상이 지출됩니다. 치료비, 보험료 인상 등 간접 비용까지 고려하면 훨씬 큰 손해입니다.
+        </p>
+      </div>
+      <div class="card">
+        <h2>3. 주변 사람에게도 해로움</h2>
+        <p>
+          간접흡연은 비흡연자의 폐암 및 심혈관 질환 위험을 증가시킵니다. 가족, 특히 어린이와 노인에게 큰 피해를 줍니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="links">
+      <p>더 많은 정보는 아래 링크에서 확인하세요:</p>
+      <a href="https://www.nosmokeguide.or.kr/" target="_blank">국가금연지원서비스</a>
+      <a href="https://www.kdca.go.kr/contents.es?mid=a30327000000" target="_blank">질병관리청 금연정보</a>
+    </div>
+  </div>
+</body>
+</html>
