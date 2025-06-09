@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>금연 진행 현황</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-image: url('2.JPG');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      width: 90%;
+      max-width: 500px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    input[type="date"] {
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 8px;
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #cc0000;
+    }
+
+    .result {
+      margin-top: 30px;
+      font-size: 1.3em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>금연 진행 현황</h1>
+    <p>금연을 시작한 날짜를 선택하세요:</p>
+    <input type="date" id="startDate">
+    <br><br>
+    <button onclick="calculateProgress()">확인하기</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function calculateProgress() {
+      const startDate = document.getElementById('startDate').value;
+      const resultDiv = document.getElementById('result');
+
+      if (!startDate) {
+        resultDiv.innerHTML = "<p>시작 날짜를 선택해주세요.</p>";
+        return;
+      }
+
+      const start = new Date(startDate);
+      const today = new Date();
+      const diffTime = today - start;
+      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+      let message = "";
+
+      if (diffDays < 0) {
+        message = "미래 날짜는 선택할 수 없습니다!";
+      } else if (diffDays <= 7) {
+        message = "좋아요! 첫걸음을 응원합니다!";
+      } else if (diffDays <= 30) {
+        message = "잘하고 있어요! 꾸준히 유지하세요!";
+      } else {
+        message = "이제는 진짜 비흡연자! 당신은 멋져요!";
+      }
+
+      resultDiv.innerHTML = `
+        <p>금연 <strong>${diffDays}일째</strong>입니다.</p>
+        <p>${message}</p>
+      `;
+    }
+  </script>
+</body>
+</html>
